@@ -34,10 +34,23 @@ class Navbar {
     render() {
         const navlinks = document.getElementById('navlinks')
         if (localStorage.getItem('token')) {
-            navlinks.insertAdjacentHTML('afterbegin', `
-                <li><a href="/">Home</a></li>
-                <li><a href="/mail/list">Mail</a></li>
-            `)
+            const tabs = [
+                {
+                    name: 'Home',
+                    link: '/',
+                },
+                {
+                    name: 'Mail',
+                    link: '/mail/list',
+                },
+            ]
+            tabs.forEach(tab => {
+                navlinks.insertAdjacentHTML('beforeend', `
+                    <li><a class="${window.location.pathname === tab.link ? 'nav_link active' : 'nav_link'}" href="${tab.link}">
+                        ${tab.name}
+                    </a></li>
+                `)
+            })
             const username = localStorage.getItem('username')
             navlinks.insertAdjacentHTML('afterend', `
                 <div class='account'>
@@ -57,11 +70,35 @@ class Navbar {
             })
             document.querySelector('.account_delete').addEventListener('click', this.delete)
         } else {
-            navlinks.insertAdjacentHTML('afterbegin', `
-                <li><a href="/">Home</a></li>
-                <li><a href="/auth/login">Sign in</a></li>
-                <li><a href="/auth/register">Sign up</a></li>
-            `)
+            const tabs = [
+                {
+                    name: 'Home',
+                    link: '/',
+                },
+                {
+                    name: 'Sign in',
+                    link: '/auth/login',
+                },
+                {
+                    name: 'Sign up',
+                    link: '/auth/register',
+                },
+            ]
+            tabs.forEach(tab => {
+                if (window.location.pathname !== tab.link) {
+                    navlinks.insertAdjacentHTML('beforeend', `
+                        <li><a class='nav_link' href="${tab.link}">
+                            ${tab.name}
+                        </a></li>
+                    `)
+                } else {
+                    navlinks.insertAdjacentHTML('beforeend', `
+                        <li><a class='nav_link active'>
+                            ${tab.name}
+                        </a></li>
+                    `)
+                }
+            })
         }
     }
 }
