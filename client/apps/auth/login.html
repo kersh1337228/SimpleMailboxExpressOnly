@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="shortcut icon" type="text/css" href="../static/icon.png">
+</head>
+<body>
+  <header><nav><ul id="navlinks"></ul></nav></header>
+  <script src="../general/navbar.js"></script>
+  <div id='content_wrapper'>
+      <div id='content'>
+          <form class='sign_form' method="post">
+              <input required type='text' name='username' placeholder='Username'>
+              <input required type='password' name='password' placeholder='Password'>
+              <button type='submit'>Sign in</button>
+              <span>Do not have an account?
+                    <a href='/auth/register' class='relocate_link'> Sign up</a>
+              </span>
+          </form>
+      </div>
+  </div>
+  <script src="/auth/login.js"></script>
+</body>
+</html>

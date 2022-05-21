@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <link rel="shortcut icon" type="text/css" href="../static/icon.png">
+</head>
+<body>
+    <header><nav><ul id="navlinks"></ul></nav></header>
+    <script src="../general/navbar.js"></script>
+    <div id='content_wrapper'>
+        <div id='content'>
+          <div class='mail_list_component'>
+              <ul class='tool_panel_upper'>
+                  <li>
+                      <button class="mail_create_button">Write an email</button>
+                  </li>
+                  <li><ul class='filter_list'>
+                      <li>
+                          <input id='filter_all' value='all' name='filter' type='radio' checked>
+                          <label for='filter_all'>All</label>
+                      </li>
+                      <li>
+                          <input id='filter_received' value='received' name='filter' type='radio'>
+                          <label for='filter_received'>Received</label>
+                      </li>
+                      <li>
+                          <input id='filter_sent' value='sent' name='filter' type='radio'>
+                          <label for='filter_sent'>Sent</label>
+                      </li>
+                  </ul></li>
+                  <li class='delete_button'><button>Delete</button></li>
+              </ul>
+              <form class='mail_create_form' style="display: none">
+                  <input required type='text' name='recipient_username' placeholder='Recipient'>
+                  <input type='text' name='title' placeholder='Title'>
+                  <textarea required name='text' placeholder='Text'></textarea>
+                  <button type='submit'>Send</button>
+              </form>
+              <ul class='mail_box'>
+                  <li><ul class='mail_list_header'>
+                      <li><input type='checkbox'></li><li></li><li></li>
+                      <li>Sender <span>▾</span></li>
+                      <li>Recipient <span>▾</span></li>
+                      <li>Title <span>▾</span></li>
+                      <li class='letter_date'>Date <span>▾</span></li>
+                  </ul></li>
+                  <li class='mail_list'><ul>
+                  </ul></li>
+              </ul>
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="mail.js"></script>
+</body>
+</html>

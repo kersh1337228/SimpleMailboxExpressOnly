@@ -1,0 +1,337 @@
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 7px;
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@font-face {
+    font-family: 'SF UI Display';
+    src: local('SFUIDisplay-Regular.eot'), url(../static/SanFranciscoFont/SFUIDisplay-Regular.eot) format('eot');
+    src: local('SF UI Display Regular'), local('SFUIDisplay-Regular'),
+    url(../static/SanFranciscoFont/SFUIDisplay-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../static/SanFranciscoFont/SFUIDisplay-Regular.woff) format('woff'),
+    url(../static/SanFranciscoFont/SFUIDisplay-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF UI Text';
+    src: local('SFUIText-Regular.eot'), url(../static/SanFranciscoFont/SFUIText-Regular.eot) format('eot');
+    src: local('SF UI Text Regular'), local('SFUIText-Regular'),
+    url(../static/SanFranciscoFont/SFUIText-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../static/SanFranciscoFont/SFUIText-Regular.woff) format('woff'),
+    url(../static/SanFranciscoFont/SFUIText-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+
+button, input, textarea {
+    font-family: 'SF UI Display', serif;
+}
+
+input, textarea {
+    padding: 10px;
+    border-radius: 7px;
+    border: solid 1px;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    border-radius: 27px;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: rgb(150, 150, 150);
+}
+
+#content_wrapper {
+    height: calc(100vh - 100px);
+    width: 100vw;
+    background: rgb(19, 21, 33);
+    color: white;
+    font-family: 'SF UI Display', serif;
+    top: 0;
+    left: 0;
+}
+
+#content {
+    overflow: hidden;
+    height: calc(100% - 150px);
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    background-image: url(../static/home_background.jpg);
+    font-family: 'SF UI Display', serif;
+}
+
+nav {
+    width: 100vw;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(30, 30, 30, 0.4);
+    backdrop-filter: blur(7px);
+    z-index: 1;
+}
+
+nav ul {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a, a:active, a:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: rgb(150, 150, 150);
+}
+
+.nav_link.active {
+    color: rgb(0, 126, 255);
+    cursor: default;
+}
+
+.account {
+    position: absolute;
+    right: 20px;
+}
+
+.account_nav {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.account_nav:hover {
+    color: rgb(150, 150, 150);
+}
+
+.account_container {
+    position: absolute;
+    right: 0;
+    top: 45px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+    background: inherit;
+}
+
+.account_delete {
+    color: rgb(170, 0, 0);
+}
+
+.account_delete_solution {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.account_delete_cancel {
+    width: 45%;
+}
+
+.account_delete_confirm {
+    width: 45%;
+    color: rgb(170, 0, 0);
+}
+
+.sign_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.errors_list {
+    color: rgb(208, 36, 36);
+}
+
+.relocate_link {
+    color: rgb(110, 110, 255) !important;
+    transition: color 0.3s;
+}
+
+.relocate_link:hover {
+    color: rgb(197, 110, 255) !important;
+}
+
+.home_component {
+    font-size: 40px;
+    margin-left: -30vw;
+}
+
+.home_component h5 {
+    margin-top: 100px;
+    font-family: 'SF UI Text', serif;
+    font-size: 25px;
+}
+
+.home_component ul {
+    margin-top: 20px;
+    font-family: 'SF UI Text', serif;
+    font-size: 25px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.mail_list_component {
+    width: 60vw;
+    min-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 10px;
+}
+
+.mail_box {
+    width: 100%;
+    display: grid;
+    grid-row-gap: 10px;
+    grid-template-rows: minmax(min-content, max-content);
+}
+
+.mail_list {
+    max-height: 60vh;
+}
+
+.mail_list ul {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-row-gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mail_list_letter, .mail_list_header {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr repeat(4, 7fr);
+    align-items: center;
+    border-radius: 12px;
+}
+
+.mail_list_letter {
+    background: rgb(41, 48, 74);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.mail_list_letter:hover {
+    background: rgb(29, 33, 53);
+    cursor: pointer;
+}
+
+.mail_list_letter.unchecked {
+    background: rgb(21, 27, 65);
+    font-weight: bold;
+}
+
+.mail_list_header li span {
+    cursor: pointer;
+}
+
+.letter_date {
+    text-align: end;
+}
+
+.tool_panel_upper {
+    width: 50%;
+    display: grid;
+    grid-template-columns: 3fr 4fr 2fr;
+    padding: 10px;
+    align-items: center;
+}
+
+.delete_button {
+    text-align: end;
+}
+
+.delete_button button {
+    color: rgb(170, 0, 0);
+}
+
+.filter_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mail_detail {
+    margin-top: -10px;
+    background: rgb(255, 255, 255);
+    border-radius: 0 0 7px 7px;
+    padding: 10px;
+    color: black;
+    max-height: 80vh;
+    position: relative;
+}
+
+.letter_text {
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 65vh;
+    margin-top: 20px;
+    font-family: 'SF UI Text', serif;
+}
+
+.mail_create_form {
+    width: 30vw;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
